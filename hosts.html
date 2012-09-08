@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Ansible UI - </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/docs.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+<div class="container">
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Ansible UI</a>
+      <ul class="nav">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li class="active"><a href="hosts.html">Hosts</a></li>
+        <li><a href="playbooks.html">Playbooks</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="row-fluid">
+    <div class="span3 bs-docs-sidebar">
+      <h3>Groups</h3>
+      <h4>Frontend</h4>
+      <!--Sidebar content-->
+      <ul class="nav nav-list bs-docs-sidenav">
+        <li class="active"><a href="#"><i class="icon-chevron-right"></i> www1.ansible.org</a></li>
+        <li><a href="#"><i class="icon-chevron-right"></i> www2.ansible.org</a></li>
+        <li><a href="#"><i class="icon-chevron-right"></i> www3.ansible.org</a></li>
+        <li><a href="#"><i class="icon-chevron-right"></i> www4.ansible.org</a></li>
+      </ul>
+      <h4>Database master</h4>
+      <ul class="nav nav-list bs-docs-sidenav">
+        <li><a href="#"><i class="icon-chevron-right"></i> db-master1.ansible.org</a></li>
+      </ul>
+      <h4>Database slave</h4>
+      <ul class="nav nav-list bs-docs-sidenav">
+        <li><a href="#"><i class="icon-chevron-right"></i> db-slave1.ansible.org</a></li>
+        <li><a href="#"><i class="icon-chevron-right"></i> db-slave2.ansible.org</a></li>
+      </ul>
+    </div>
+    <div class="span9">
+      <h2>www1.ansible.org</h2>
+      <!--Body content-->
+      <dl class="dl-horizontal">
+        <dt>Group:</dt>
+        <dd>frontend</dd>
+        <dt>IPv4:</dt>
+        <dd>192.168.1.1</dd>
+        <dt>IPv6:</dt>
+        <dd>a12b:45de:543a:435b:6509:aafe:3122f</dd>
+        <dt>Last excution:</dt>
+        <dd>01/01/2012 12:30</dd>
+      </dl>
+      <table class="table table-striped table-bordered">
+        <caption>Last execution report</caption>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Last execution status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Add NGinx repository</td>
+            <td><span class="label label-warning">Unchanged</span></td>
+          </tr>
+          <tr>
+            <td>Install NGinx</td>
+            <td><span class="label label-warning">Unchanged</span></td>
+          </tr>
+          <tr>
+            <td>Install PHP-FPM</td>
+            <td><span class="label label-warning">Unchanged</span></td>
+          </tr>
+          <tr>
+            <td>Upload NGginx configuration file</td>
+            <td><span class="label label-success">Changed</span></td>
+          </tr>
+          <tr>
+            <td>Upload PHP-FPM configuration file</td>
+            <td><span class="label label-warning">Unchanged</span></td>
+          </tr>
+          <tr>
+            <td>Upload application</td>
+            <td><span class="label label-success">Changed</span></td>
+          </tr>
+          <tr>
+            <td>Upload application configuration</td>
+            <td><span class="label label-warning">Unchanged</span></td>
+          </tr>
+          <tr>
+            <td>Restart PHP-FPM</td>
+            <td><span class="label label-success">Changed</span></td>
+          </tr>
+          <tr>
+            <td>Restart NGinx</td>
+            <td><span class="label label-success">Changed</span></td>
+          </tr>
+          <tr>
+            <td>Open firewall (80)</td>
+            <td><span class="label label-warning">Unchanged</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Facter</h3>
+      <div id="host-facter"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Company 2012</p>
+  </footer>
+</div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="http://mbraak.github.com/jqTree/tree.jquery.js"></script>
+        <script>
+          var data = [
+              {
+                  label: 'node1',
+                  children: [
+                      {
+                          label: 'child1',
+                          children: [
+                              { label: 'childA',
+
+                              },
+                              { label: 'childB' }
+                          ]
+                      },
+                      { label: 'child2' }
+                  ]
+              },
+              {
+                  label: 'node2',
+                  children: [
+                      { label: 'child3' }
+                  ]
+              }
+          ];
+
+          $('#host-facter').tree({
+              data: data,
+              autoOpen:0
+          });
+        </script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
